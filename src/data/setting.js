@@ -1,0 +1,1 @@
+export const URL = "test-front.framework.team/"
