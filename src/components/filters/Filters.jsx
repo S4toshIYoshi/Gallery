@@ -19,16 +19,14 @@ const Filters = ({actionSetUrl, dependencies}) => {
     ${created ? `&createdId=${created}` : ""}
     `)
 
-    
-
-
   return (
     <form>
-        <input type="text" placeholder="Name"/>
+        <input type="text" placeholder="Name" onChange={(e) => setNamePicture(e.target.value)}/>
         <br />
         <InputSelect name="Authors" data={authors} ObjectName="name" actionChoice={setSelectedAuthor}/>
         <br />
         <InputSelect name="locations" data={location} ObjectName="location" actionChoice={setSelectedLocation}/>
+        
     </form>
   )
 }
