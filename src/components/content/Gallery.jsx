@@ -1,5 +1,6 @@
 
-const Gallery = () => {
+const Gallery = ({data}) => {
+    console.log(data);
   return (
     <div>Gallery</div>
   )
