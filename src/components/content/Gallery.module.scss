@@ -2,6 +2,8 @@ $width: 360px;
 $height: 275px;
 
 .pictures {
+	margin-top: 45px;
+
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-auto-flow: row;

@@ -3,3 +3,13 @@ $accentDarkTheme: #ffffff;
 
 $lightTheme: #ffffff;
 $accentLightTheme: #000000;
+
+@mixin fonts($size, $lineH, $FW, $color: '#000000') {
+	color: $color;
+	font-feature-settings: 'clig' off, 'liga' off;
+	font-family: 'Roboto';
+	font-size: $size;
+	font-style: normal;
+	font-weight: $FW;
+	line-height: $lineH;
+}

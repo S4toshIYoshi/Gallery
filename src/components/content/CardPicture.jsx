@@ -15,18 +15,18 @@ const CardPicture = ({data}) => {
 			<img src={`${BASE_URL}${data.imageUrl}`} alt='1' />
 			<div className={style.description}>
 				<h3>{data.name}</h3>
-				<p>
-					Author: <span>{author[0].name ? author[0].name : 'loading...'}</span>
-				</p>
-				<p>
-					Created: <span>{data.created}</span>
-				</p>
-				<p>
-					Location:{' '}
-					<span>
-						{location[0].location ? location[0].location : 'loading...'}
-					</span>
-				</p>
+				<div className={style.information}>
+					<p>
+						Author: <span>{author[0] ? author[0].name : 'loading...'}</span>
+					</p>
+					<p>
+						Created: <span>{data.created}</span>
+					</p>
+					<p>
+						Location:{' '}
+						<span>{location[0] ? location[0].location : 'loading...'}</span>
+					</p>
+				</div>
 			</div>
 		</div>
 	);
