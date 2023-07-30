@@ -1,8 +1,8 @@
-import lightWhite from "../images/lightWhite"
-import lightBlack from "../images/lightBlack"
+import lightWhite from "../images/lightWhite.svg"
+import lightBlack from "../images/lightBlack.svg"
 
-const LightIcon = ({color = "black"}) => {
-    if(color === "white")
+const LightIcon = ({darkTheme = false}) => {
+    if(darkTheme)
         return <img src={lightWhite} alt="logo" />
     else
         return <img src={lightBlack} alt="logo" />

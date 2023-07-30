@@ -1,34 +1,53 @@
-import { useState } from "react"
-import { BASE_URL, PAINTINGS } from "../../data/api"
-import InputSelect from "./InputSelect"
+import {useState, useContext} from 'react';
+import {ATRIBUTE_URL, PAINTINGS_URL} from '../../data/api';
+import {createUrl} from '../../functions/createUrl';
+import InputDate from './InputDate';
+import InputSelect from './InputSelect';
+import style from './Filters.module.scss';
+import cn from 'classnames';
+import {DataContext} from '../../provaiders/DataProvaider';
 
+const Filters = ({actionSetUrl}) => {
+	const {authors, locations} = useContext(DataContext);
 
-const Filters = ({actionSetUrl, dependencies}) => {
-    const [authors, location] = dependencies
+	const [namePicture, setNamePicture] = useState('');
+	const [selectedAuthor, setSelectedAuthor] = useState(['']);
+	const [selectedLocation, setSelectedLocation] = useState(['']);
+	const [created, setCreated] = useState([0, 0]);
 
-    const [namePicture, setNamePicture] = useState()
-    const [selectedAuthor, setSelectedAuthor] = useState()
-    const [selectedLocation, setSelectedLocation] = useState()
-    const [created, setCreated] = useState()
-    
-    actionSetUrl(`
-    ${PAINTINGS}?
-    ${namePicture ? `&q=${namePicture}` : ""}
-    ${selectedAuthor ? `&authorId=${selectedAuthor}` : ""}
-    ${selectedLocation ? `&locationId=${selectedLocation}` : ""}
-    ${created ? `&createdId=${created}` : ""}
-    `)
+	let url = createUrl(PAINTINGS_URL, [
+		[namePicture, ATRIBUTE_URL.name],
+		[selectedAuthor, ATRIBUTE_URL.author],
+		[selectedLocation, ATRIBUTE_URL.location],
+		[created[0], ATRIBUTE_URL.createdGte],
+		[created[1], ATRIBUTE_URL.createdLte]
+	]);
 
-  return (
-    <form>
-        <input type="text" placeholder="Name" onChange={(e) => setNamePicture(e.target.value)}/>
-        <br />
-        <InputSelect name="Authors" data={authors} ObjectName="name" actionChoice={setSelectedAuthor}/>
-        <br />
-        <InputSelect name="locations" data={location} ObjectName="location" actionChoice={setSelectedLocation}/>
-        
-    </form>
-  )
-}
+	setTimeout(() => actionSetUrl(url), 0); //без таймаута будет ошибка bed setState()
 
-export default Filters
+	return (
+		<div className={style.filters}>
+			<input
+				type='text'
+				placeholder='Name'
+				onChange={e => setNamePicture(e.target.value)}
+				className={cn(style.name, style.standart, style.light)}
+			/>
+			<InputSelect
+				name='Authors'
+				data={authors}
+				ObjectName='name'
+				action={[selectedAuthor, setSelectedAuthor]}
+			/>
+			<InputSelect
+				name='locations'
+				data={locations}
+				ObjectName='location'
+				action={[selectedLocation, setSelectedLocation]}
+			/>
+			<InputDate action={[created, setCreated]} />
+		</div>
+	);
+};
+
+export default Filters;

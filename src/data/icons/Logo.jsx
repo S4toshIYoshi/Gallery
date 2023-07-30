@@ -2,9 +2,9 @@ import imagesGrey from "../images/logoGrey.svg"
 import imagesBlack from "../images/logoBlack.svg"
 
 
-const Logo = ({color="black"}) => {
+const Logo = ({darkTheme = false}) => {
   
-    if(color === "white")
+    if(darkTheme)
         return <img src={imagesGrey} alt="logo" />
     else
         return <img src={imagesBlack} alt="logo" />

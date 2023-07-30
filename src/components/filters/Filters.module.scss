@@ -1,0 +1,152 @@
+@import '../../vars.scss';
+
+.filters {
+	width: 100%;
+
+	display: flex;
+	justify-content: space-between;
+	column-gap: 20px;
+}
+
+.standart {
+	position: relative;
+
+	width: 100%;
+	max-width: 265px;
+	border-radius: 8px;
+	padding: 15px;
+}
+
+.standart.light {
+	background-color: $lightTheme;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.standart.dark {
+	background-color: $darkTheme;
+	border: 1px solid #fff;
+}
+
+.name.light {
+	color: rgba($color: $accentLightTheme, $alpha: 0.5);
+}
+
+.name.dark {
+	color: rgba($color: $accentDarkTheme, $alpha: 0.5);
+}
+
+.select.open {
+	border-color: #000000;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+	z-index: 3;
+}
+
+.standart.open {
+	border-radius: 8px 8px 0 0;
+}
+
+.selectMenu {
+	position: absolute;
+	top: 49px;
+	left: -1px;
+
+	width: calc(100% + 2px);
+	height: 365px;
+	padding: 15px 0;
+
+	border: 1px solid #000000;
+	border-top: none;
+	border-radius: 0 0 8px 8px;
+	z-index: 3;
+
+	display: flex;
+	flex-flow: column;
+	row-gap: 10px;
+
+	overflow-y: scroll;
+
+	div {
+		padding: 10px 30px;
+		transition: background-color, color 0.3s ease;
+		cursor: pointer;
+	}
+
+	div:hover {
+		background-color: #000000;
+		color: #fff;
+	}
+}
+
+.label {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	cursor: pointer;
+}
+
+.selectedChoce {
+	width: 80%;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	column-gap: 10px;
+
+	overflow-x: auto;
+
+	span {
+		white-space: nowrap;
+	}
+}
+
+.dateBox.open {
+	border-color: #000000;
+	border-bottom: none;
+	z-index: 3;
+}
+
+.dateMenu {
+	position: absolute;
+	top: 49px;
+	left: -1px;
+
+	width: calc(100% + 2px);
+	padding: 20px;
+
+	border: 1px solid #000000;
+	border-top: none;
+	border-radius: 0 0 8px 8px;
+	z-index: 3;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	column-gap: 10px;
+
+	span {
+		width: 12px;
+		height: 1px;
+		background: #000;
+	}
+
+	input {
+		width: 100%;
+		padding: 15px;
+		border-radius: 8px;
+
+		background-color: #efefef;
+	}
+}
+
+.closeField {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	cursor: auto;
+	background-color: rgba($color: #000000, $alpha: 0);
+	z-index: 2;
+}
