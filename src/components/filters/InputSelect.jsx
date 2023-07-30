@@ -1,10 +1,12 @@
-import {useState} from 'react';
+import {useContext, useState} from 'react';
 import style from './Filters.module.scss';
 import cn from 'classnames';
 import VectorDown from '../../data/icons/VectorDown';
 import DeleteButton from '../../UI/DeleteButton';
+import {ThemeContext} from '../../provaiders/ThemeProvaider';
 
 const InputSelect = ({name, data, ObjectName, action}) => {
+	const {theme} = useContext(ThemeContext);
 	const [dataId, setDataId] = action;
 
 	const [selected, setSelected] = useState([]);
@@ -32,10 +34,14 @@ const InputSelect = ({name, data, ObjectName, action}) => {
 				style.select,
 				style.light,
 				style.standart,
-				isOpen ? style.open : ''
+				isOpen ? style.open : '',
+				theme === 'light' ? style.light : style.dark
 			)}>
 			<div
-				className={style.label}
+				className={cn(
+					style.label,
+					theme === 'light' ? style.light : style.dark
+				)}
 				onClick={() => setIsOpen(isOpen ? false : true)}>
 				<div className={style.selectedChoce}>
 					{!selected[0] && <span>{name}</span>}
@@ -44,14 +50,21 @@ const InputSelect = ({name, data, ObjectName, action}) => {
 					})}
 				</div>
 				{selected.length > 0 && (
-					<DeleteButton action={() => deleteLastElement()} />
+					<DeleteButton
+						action={() => deleteLastElement()}
+						darkMode={theme === 'dark'}
+					/>
 				)}
-				<VectorDown />
+				<VectorDown darkMode={theme === 'dark'} />
 			</div>
 
 			{isOpen && (
 				<>
-					<div className={style.selectMenu}>
+					<div
+						className={cn(
+							style.selectMenu,
+							theme === 'light' ? style.light : style.dark
+						)}>
 						{data.map(el => {
 							return (
 								<div

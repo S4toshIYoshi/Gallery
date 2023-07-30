@@ -7,7 +7,7 @@ const style = {
 	zIndex: '3'
 };
 
-const DeleteButton = ({action}) => {
+const DeleteButton = ({action, darkMode}) => {
 	return (
 		<button
 			onClick={e => {
@@ -15,7 +15,7 @@ const DeleteButton = ({action}) => {
 				e.preventDefault();
 			}}
 			style={style}>
-			<Cross />
+			<Cross darkMode={darkMode} />
 		</button>
 	);
 };

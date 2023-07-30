@@ -6,9 +6,12 @@ import InputSelect from './InputSelect';
 import style from './Filters.module.scss';
 import cn from 'classnames';
 import {DataContext} from '../../provaiders/DataProvaider';
+import {ThemeContext} from '../../provaiders/ThemeProvaider';
 
-const Filters = ({actionSetUrl}) => {
+const Filters = ({handelSetUrl}) => {
 	const {authors, locations} = useContext(DataContext);
+
+	const {theme} = useContext(ThemeContext);
 
 	const [namePicture, setNamePicture] = useState('');
 	const [selectedAuthor, setSelectedAuthor] = useState(['']);
@@ -23,7 +26,7 @@ const Filters = ({actionSetUrl}) => {
 		[created[1], ATRIBUTE_URL.createdLte]
 	]);
 
-	setTimeout(() => actionSetUrl(url), 0); //без таймаута будет ошибка bed setState()
+	setTimeout(() => handelSetUrl(url), 0); //без таймаута будет ошибка bed setState()
 
 	return (
 		<div className={style.filters}>
@@ -31,7 +34,12 @@ const Filters = ({actionSetUrl}) => {
 				type='text'
 				placeholder='Name'
 				onChange={e => setNamePicture(e.target.value)}
-				className={cn(style.name, style.standart, style.light)}
+				className={cn(
+					style.name,
+					style.standart,
+					style.light,
+					theme === 'light' ? style.light : style.dark
+				)}
 			/>
 			<InputSelect
 				name='Authors'

@@ -6,10 +6,19 @@ import style from './Gallery.module.scss';
 
 const Gallery = ({url}) => {
 	const [data, setData] = useState([]);
+	const [isLoad, setIsLoad] = useState(false);
 
 	useEffect(() => {
+		setIsLoad(false);
+
 		SendRequest(`${url}`, setData);
+
+		setIsLoad(true);
 	}, [url]);
+
+	if (!isLoad) {
+		return <div>Load...</div>;
+	}
 
 	return (
 		<main className={style.pictures}>

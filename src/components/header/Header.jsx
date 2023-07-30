@@ -1,15 +1,20 @@
-import LightIcon from "../../data/icons/LightIcon"
-import Logo from "../../data/icons/Logo"
-import style from './Header.module.scss'
-
+import {useContext} from 'react';
+import LightIcon from '../../data/icons/LightIcon';
+import Logo from '../../data/icons/Logo';
+import {ThemeContext} from '../../provaiders/ThemeProvaider';
+import style from './Header.module.scss';
 
 const Header = () => {
-  return (
-    <header className={style.header}>
-        <Logo />
-        <button> <LightIcon /> </button>
-    </header>
-  )
-}
+	const {theme, setTheme} = useContext(ThemeContext);
 
-export default Header
+	return (
+		<header className={style.header}>
+			<Logo />
+			<button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
+				<LightIcon darkTheme={theme === 'dark'} />
+			</button>
+		</header>
+	);
+};
+
+export default Header;

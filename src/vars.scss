@@ -4,6 +4,29 @@ $accentDarkTheme: #ffffff;
 $lightTheme: #ffffff;
 $accentLightTheme: #000000;
 
+//filters
+%menuStandart {
+	position: absolute;
+	top: 45px;
+	left: -1px;
+
+	width: calc(100% + 2px);
+
+	border-radius: 0 0 8px 8px;
+	z-index: 3;
+}
+
+%closeField {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	cursor: auto;
+	background-color: rgba($color: #000000, $alpha: 0);
+	z-index: 2;
+}
+
 @mixin fonts($size, $lineH, $FW, $color: '#000000') {
 	color: $color;
 	font-feature-settings: 'clig' off, 'liga' off;
