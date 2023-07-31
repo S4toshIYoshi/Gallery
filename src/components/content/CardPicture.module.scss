@@ -1,12 +1,15 @@
 @import '../../vars.scss';
 @import '../../media.scss';
+
+//use mobile first
+
 .card {
 	position: relative;
 
 	overflow: hidden;
 
-	width: $widthCard;
-	height: $heightCard;
+	width: $widthCardSm;
+	height: $heightCardSm;
 
 	border-radius: 20px;
 
@@ -58,23 +61,22 @@
 	}
 }
 
-@media (max-width: $xs) {
-	.card {
-		width: $widthCardXs;
-		height: $heightCardXs;
-	}
-}
-
-@media (max-width: $m) {
+@media (min-width: $m) {
 	.card {
 		width: $widthCardM;
 		height: $heightCardM;
 	}
 }
 
-@media (max-width: $sm) {
+@media (min-width: $xs) {
 	.card {
-		width: $widthCardSm;
-		height: $heightCardSm;
+		width: $widthCardXs;
+		height: $heightCardXs;
+	}
+}
+@media (min-width: $xl) {
+	.card {
+		width: $widthCardXl;
+		height: $heightCardXl;
 	}
 }

@@ -1,31 +1,31 @@
 @import '../../vars.scss';
 @import '../../media.scss';
 
+//use mobile first
+
 .pictures {
 	margin-top: 45px;
 
 	display: grid;
-	//grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-	grid-template-columns: repeat(auto-fill, $widthCard);
+	grid-template-columns: repeat(auto-fill, $widthCardSm);
 	grid-auto-flow: row;
 	gap: 20px;
 	justify-content: center;
 }
 
-@media (max-width: $xs) {
-	.pictures {
-		grid-template-columns: repeat(auto-fill, $widthCardXs);
-	}
-}
-
-@media (max-width: $m) {
+@media (min-width: $m) {
 	.pictures {
 		grid-template-columns: repeat(auto-fill, $widthCardM);
 	}
 }
 
-@media (max-width: $sm) {
+@media (min-width: $xs) {
 	.pictures {
-		grid-template-columns: repeat(auto-fill, $widthCardSm);
+		grid-template-columns: repeat(auto-fill, $widthCardXs);
+	}
+}
+@media (min-width: $xl) {
+	.pictures {
+		grid-template-columns: repeat(auto-fill, $widthCardXl);
 	}
 }

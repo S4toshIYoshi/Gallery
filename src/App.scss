@@ -18,26 +18,23 @@
 }
 
 .Container {
-	max-width: 1366px;
-	width: 81.991215227%;
+	width: 88.89%;
 
 	margin: 0 auto;
 }
 
-@media (max-width: $xs) {
-	.Container {
-		width: 91.8%;
-	}
-}
-
-@media (max-width: $m) {
+@media (min-width: $m) {
 	.Container {
 		width: 91.67%;
 	}
 }
-
-@media (max-width: $sm) {
+@media (min-width: $xl) {
 	.Container {
-		width: 88.89%;
+		width: 82.991215227%;
+	}
+}
+@media (min-width: $xs) {
+	.Container {
+		width: 91.8%;
 	}
 }
