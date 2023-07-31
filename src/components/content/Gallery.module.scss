@@ -1,8 +1,6 @@
 @import '../../vars.scss';
 @import '../../media.scss';
 
-//use mobile first
-
 .pictures {
 	margin-top: 45px;
 
@@ -27,5 +25,6 @@
 @media (min-width: $xl) {
 	.pictures {
 		grid-template-columns: repeat(auto-fill, $widthCardXl);
+		column-gap: 20px;
 	}
 }

@@ -19,24 +19,24 @@
 }
 
 .Container {
-	width: 88.89%;
+	width: calc($sm - (20px * 2));
 
 	margin: 0 auto;
 }
 
 @media (min-width: $m) {
 	.Container {
-		width: 91.67%;
+		width: calc($m - (34px * 2));
 	}
 }
 
 @media (min-width: $xs) {
 	.Container {
-		width: 91.8%;
+		width: calc($xs - (42px * 2));
 	}
 }
 @media (min-width: $xl) {
 	.Container {
-		width: 82.991215227%;
+		width: calc($xl - (123px * 2));
 	}
 }
