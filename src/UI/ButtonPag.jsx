@@ -16,8 +16,8 @@ const ButtonPag = ({
 }) => {
 	const {theme} = useContext(ThemeContext);
 
+	const bg = theme === 'light' ? 'black' : 'white';
 	const color = theme === 'light' ? 'white' : 'black';
-	const bg = theme === 'ligth' ? 'black' : 'white';
 
 	const variableStyle = {
 		borderRadius: first ? '10px 0 0 10px' : last ? '0 10px 10px 0' : 'none',

@@ -1,0 +1,10 @@
+.img {
+	cursor: 'pointer';
+	z-index: 3;
+}
+
+@media (max-width: 650px) {
+	.img {
+		z-index: 2;
+	}
+}

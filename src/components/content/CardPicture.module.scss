@@ -1,12 +1,12 @@
 @import '../../vars.scss';
-
+@import '../../media.scss';
 .card {
 	position: relative;
 
 	overflow: hidden;
 
-	width: 360px;
-	height: 270px;
+	width: $widthCard;
+	height: $heightCard;
 
 	border-radius: 20px;
 
@@ -55,5 +55,26 @@
 .card:hover {
 	.description {
 		bottom: 48%;
+	}
+}
+
+@media (max-width: $xs) {
+	.card {
+		width: $widthCardXs;
+		height: $heightCardXs;
+	}
+}
+
+@media (max-width: $m) {
+	.card {
+		width: $widthCardM;
+		height: $heightCardM;
+	}
+}
+
+@media (max-width: $sm) {
+	.card {
+		width: $widthCardSm;
+		height: $heightCardSm;
 	}
 }

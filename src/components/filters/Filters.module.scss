@@ -1,4 +1,5 @@
 @import '../../vars.scss';
+@import '../../media.scss';
 
 .filters {
 	margin-top: 35px;
@@ -22,6 +23,28 @@
 
 	background: $lightTheme;
 	border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: $xs) {
+	.standart {
+		max-width: 220px;
+	}
+}
+
+@media (max-width: $m) {
+	.standart {
+		max-width: 160px;
+	}
+}
+
+@media (max-width: 650px) {
+	.filters {
+		flex-flow: column;
+		row-gap: 15px;
+	}
+	.standart {
+		max-width: 100%;
+	}
 }
 
 .standart.dark {

@@ -1,11 +1,31 @@
-$width: 360px;
-$height: 275px;
+@import '../../vars.scss';
+@import '../../media.scss';
 
 .pictures {
 	margin-top: 45px;
 
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	//grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+	grid-template-columns: repeat(auto-fill, $widthCard);
 	grid-auto-flow: row;
 	gap: 20px;
+	justify-content: center;
+}
+
+@media (max-width: $xs) {
+	.pictures {
+		grid-template-columns: repeat(auto-fill, $widthCardXs);
+	}
+}
+
+@media (max-width: $m) {
+	.pictures {
+		grid-template-columns: repeat(auto-fill, $widthCardM);
+	}
+}
+
+@media (max-width: $sm) {
+	.pictures {
+		grid-template-columns: repeat(auto-fill, $widthCardSm);
+	}
 }
