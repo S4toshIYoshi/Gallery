@@ -28,13 +28,14 @@
 		width: 91.67%;
 	}
 }
-@media (min-width: $xl) {
-	.Container {
-		width: 82.991215227%;
-	}
-}
+
 @media (min-width: $xs) {
 	.Container {
 		width: 91.8%;
+	}
+}
+@media (min-width: $xl) {
+	.Container {
+		width: 82.991215227%;
 	}
 }
