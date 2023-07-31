@@ -1,6 +1,3 @@
-import {useState} from 'react';
-import {useEffect} from 'react';
-import {SendRequest} from '../../functions/getAJAX';
 import CardPicture from './CardPicture';
 import style from './Gallery.module.scss';
 

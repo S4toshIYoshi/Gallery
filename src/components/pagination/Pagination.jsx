@@ -1,8 +1,5 @@
-import {useContext, useState} from 'react';
-import Vector from '../../data/icons/Vector';
+import {useState} from 'react';
 import {arrayShift} from '../../functions/arrayShift';
-import {generation} from '../../functions/genereation';
-import {DataContext} from '../../provaiders/DataProvaider';
 import ButtonPag from '../../UI/ButtonPag';
 import style from './Pagination.module.scss';
 

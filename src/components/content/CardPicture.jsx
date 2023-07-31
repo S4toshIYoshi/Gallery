@@ -1,4 +1,4 @@
-import {useContext, useState, useCallback, useMemo} from 'react';
+import {useContext} from 'react';
 import {BASE_URL} from '../../data/api';
 import {filterData} from '../../functions/filterData';
 import {DataContext} from '../../provaiders/DataProvaider';
