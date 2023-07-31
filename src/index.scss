@@ -124,3 +124,22 @@ code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
 		monospace;
 }
+
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12);
+	border-radius: 10px;
+	background-color: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar {
+	width: 9px;
+	background-color: #7b7b7b;
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	height: 132px;
+	-webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12);
+	background-color: #7b7b7b;
+}

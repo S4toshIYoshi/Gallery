@@ -106,13 +106,6 @@
 	}
 }
 
-.selectMenu::-webkit-scrollbar-thumb {
-	border-radius: 10px;
-	background-color: #7b7b7b;
-	width: 9px;
-	box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12);
-}
-
 .selectMenu.dark {
 	@include fonts(16px, 20px, 500, #fff);
 	border: 1px solid #fff;
@@ -147,13 +140,6 @@
 	span {
 		white-space: nowrap;
 	}
-}
-
-.selectedChoce::-webkit-scrollbar-thumb {
-	border-radius: 10px;
-	background-color: #7b7b7b;
-	width: 3px;
-	box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12);
 }
 
 .dateBox.open {
