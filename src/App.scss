@@ -1,13 +1,11 @@
 @import './media.scss';
 .App {
-	max-width: 1366px;
+	width: 100%;
 	min-height: 100vh;
 	padding: 35px 0 100px 0;
 	margin: 0 auto;
 
 	font-family: 'Roboto', sans-serif;
-
-	overflow-y: scroll;
 }
 
 .App.light {
