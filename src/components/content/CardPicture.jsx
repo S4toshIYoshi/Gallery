@@ -12,7 +12,10 @@ const CardPicture = ({data}) => {
 
 	return (
 		<div className={style.card}>
-			<img src={`${BASE_URL}${data.imageUrl}`} alt='1' />
+			<img
+				src={`${BASE_URL}${data.imageUrl}`}
+				alt={author[0] ? author[0].name : 'loading...'}
+			/>
 			<div className={style.description}>
 				<h3>{data.name}</h3>
 				<div className={style.information}>
