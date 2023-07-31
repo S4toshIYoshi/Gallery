@@ -10,7 +10,7 @@ const Vector = ({direction = 'right', active = true, doubleVector = false}) => {
 
 	const style = {
 		transform: direction === 'left' ? 'rotate(180deg)' : 'none',
-		opacity: active ? 'none' : '0.3'
+		opacity: active ? '1' : '0.3'
 	};
 	if (theme === 'light') {
 		return (

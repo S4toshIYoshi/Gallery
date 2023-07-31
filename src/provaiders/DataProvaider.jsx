@@ -20,7 +20,7 @@ const DataProvaider = ({children}) => {
 	}, []);
 
 	return (
-		<DataContext.Provider value={{authors, locations, paintings}}>
+		<DataContext.Provider value={{authors, locations, paintings, setPaintings}}>
 			{children}
 		</DataContext.Provider>
 	);
