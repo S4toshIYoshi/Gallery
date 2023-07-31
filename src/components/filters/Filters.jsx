@@ -8,17 +8,18 @@ import cn from 'classnames';
 import {DataContext} from '../../provaiders/DataProvaider';
 import {ThemeContext} from '../../provaiders/ThemeProvaider';
 
-const Filters = ({handelSetUrl}) => {
+const Filters = ({actionUrl, handelSetPage}) => {
 	const {authors, locations} = useContext(DataContext);
-
 	const {theme} = useContext(ThemeContext);
+
+	const [url, setUrl] = actionUrl;
 
 	const [namePicture, setNamePicture] = useState('');
 	const [selectedAuthor, setSelectedAuthor] = useState(['']);
 	const [selectedLocation, setSelectedLocation] = useState(['']);
 	const [created, setCreated] = useState([0, 0]);
 
-	let url = createUrl(PAINTINGS_URL, [
+	let newUrl = createUrl(PAINTINGS_URL, [
 		[namePicture, ATRIBUTE_URL.name],
 		[selectedAuthor, ATRIBUTE_URL.author],
 		[selectedLocation, ATRIBUTE_URL.location],
@@ -26,7 +27,11 @@ const Filters = ({handelSetUrl}) => {
 		[created[1], ATRIBUTE_URL.createdLte]
 	]);
 
-	setTimeout(() => handelSetUrl(url), 0); //без таймаута будет ошибка bed setState()
+	setTimeout(() => setUrl(newUrl), 0); //без таймаута будет ошибка bed setState()
+
+	if (url !== newUrl) {
+		handelSetPage(1);
+	}
 
 	return (
 		<div className={style.filters}>
